@@ -1,0 +1,16 @@
+<odoo>
+    <record id="view_crm_lead_form_inherit" model="ir.ui.view">
+        <field name="name">crm.lead.form.inherit</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="base.view_view_form"/>
+        <field name="arch" type="xml">
+            <!-- Utilisation de xpath pour cibler l'emplacement du champ 'email_from' -->
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <!-- Ajout des nouveaux champs : Nom, Prénom, Location -->
+                <field name="last_name" string="Nom" placeholder="Nom"/>
+                <field name="first_name" string="Prénom" placeholder="Prénom"/>
+                <field name="location" string="Location" placeholder="Location"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
